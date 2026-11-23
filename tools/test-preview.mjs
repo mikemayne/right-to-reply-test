@@ -22,12 +22,16 @@ try {
   await page.keyboard.press('Escape');
   assert.equal(await page.locator('#reply-popup').isVisible(),false);
   await page.goto(base+'five-parties.html');
-  const shared = page.locator('[data-keyword="magna aliqua"].multi-keyword');
+  const shared = page.locator('[data-keyword="magna aliqua"]');
   await shared.click();
   await page.waitForFunction(()=>document.querySelectorAll('.reply-short').length===5);
   assert.equal(await page.locator('.reply-detail:visible').count(),0);
   const colors = await page.locator('.reply-short').evaluateAll(nodes=>nodes.map(n=>getComputedStyle(n).color));
-  assert.equal(new Set(colors).size,5);
+  assert.equal(new Set(colors).size,1);
+  const underlines = await page.locator('.preview-keyword').evaluateAll(nodes=>nodes.map(n=>({color:getComputedStyle(n).textDecorationColor, background:getComputedStyle(n).backgroundImage})));
+  assert.equal(new Set(underlines.map(x=>x.color)).size,1);
+  assert.ok(underlines.every(x=>x.background==='none'));
+  assert.equal(await page.locator('.reply-detail strong:visible').count(),0);
   const first = page.locator('.reply-short').first();
   await first.click();
   assert.equal(await page.locator('.reply-detail:visible').count(),1);
