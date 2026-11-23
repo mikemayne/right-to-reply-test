@@ -30,6 +30,19 @@
     popup.style.left = Math.max(8, Math.min(r.left, innerWidth - width - 8)) + 'px';
     popup.style.top = Math.max(8, Math.min(above ? r.top - height - 6 : below, innerHeight - height - 8)) + 'px';
   }
+  function revealDetail(detail) {
+    // Scroll only the panel, accounting for its sticky header.
+    const panel = popup.getBoundingClientRect();
+    const header = popup.querySelector('.reply-toolbar').getBoundingClientRect();
+    const top = Math.max(panel.top + popup.clientTop, header.bottom) + 8;
+    const bottom = panel.top + popup.clientTop + popup.clientHeight - 8;
+    const rect = detail.getBoundingClientRect();
+    if (rect.height > bottom - top || rect.top < top) {
+      popup.scrollTop += rect.top - top;
+    } else if (rect.bottom > bottom) {
+      popup.scrollTop += rect.bottom - bottom;
+    }
+  }
   function close(restore = false) {
     clearTimeout(timer);
     const old = anchor;
@@ -91,6 +104,7 @@
       detail.hidden = !detail.hidden;
       short.setAttribute('aria-expanded', String(!detail.hidden));
       place();
+      if (!detail.hidden) revealDetail(detail);
     });
     item.append(short,detail);
     return item;
@@ -110,6 +124,7 @@
     const current = ++sequence;
     body.textContent = 'Loading responses…';
     popup.hidden = false;
+    popup.scrollTop = 0;
     place();
     if (pin) closeButton.focus({preventScroll:true});
     try {
