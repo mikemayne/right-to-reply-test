@@ -12,7 +12,7 @@ These rules apply equally to every participating political party. **Right to Rep
 
 ## 2. Published content and format
 
-Each approved entry comprises an identifying party/trigger, a **single-line plain-text response of no more than 160 characters**, and a required expanded plain-text description of **no more than 255 characters**. No line breaks are permitted in the one-line response. The test placeholders are:
+Each approved entry comprises an identifying party/trigger, a **single-line plain-text response of no more than 128 characters**, and a required expanded plain-text description of **no more than 255 characters**. No line breaks are permitted in the one-line response. The test placeholders are:
 
 > Your one line response to the keyword goes here
 
