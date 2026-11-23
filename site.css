@@ -1,0 +1,38 @@
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#222;background:#f6f5f2;line-height:1.65;--muted:#605e58;--line:#d8d5ce;--ink:#172e36}
+*{box-sizing:border-box}
+body{margin:0}
+a{color:inherit;text-underline-offset:.2em}
+button:focus-visible,a:focus-visible{outline:3px solid #217d85;outline-offset:4px}
+.shell{width:min(920px,calc(100% - 36px));margin-inline:auto}
+.project-header{background:#fff;border-bottom:1px solid var(--line)}
+.project-header .shell{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-block:16px}
+.brand{font-size:1.25rem;font-weight:750;color:var(--ink);text-decoration:none}
+.brand span{font-size:.66rem;letter-spacing:.12em;color:var(--muted);margin-left:5px}
+.page-switch{display:flex;flex-wrap:wrap;gap:16px;font-size:.88rem}
+.page-switch a[aria-current]{font-weight:700;text-decoration:underline}
+.intro{padding-block:38px 42px;max-width:920px}
+.eyebrow,.newspaper-label{font-size:.73rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700;color:var(--muted);margin:0 0 8px}
+.intro h1{font-size:clamp(1.85rem,4vw,2.7rem);line-height:1.15;letter-spacing:-.035em;margin:0 0 18px;color:var(--ink)}
+.intro p{max-width:780px;margin-block:10px}
+.note{font-size:.9rem;color:var(--muted)}
+.primary-link{display:inline-block;background:var(--ink);color:#fff;padding:10px 16px;margin-top:12px;border-radius:6px;text-decoration:none;font-weight:600}
+.paper{background:#fff;border-block:1px solid var(--line)}
+.masthead{text-align:center;padding-top:26px}
+.newspaper-name{font:700 clamp(2rem,6vw,3.5rem)/1.15 Georgia,serif;letter-spacing:-.05em;margin:7px 0 22px}
+.fake-nav{display:flex;justify-content:center;gap:10px 25px;flex-wrap:wrap;border-block:1px solid #222;padding:12px 4px;font-size:.86rem;font-weight:600}
+.fake-nav span{cursor:default}
+.story{max-width:700px;padding-block:42px;font:1.13rem/1.85 Georgia,"Times New Roman",serif}
+.story h2{font-size:clamp(2rem,5vw,2.9rem);line-height:1.15;letter-spacing:-.04em;margin:12px 0}
+.story h3{font-size:1.4rem;margin-top:30px}
+.story .eyebrow,.story .byline,.story .note{font-family:system-ui,sans-serif}
+.byline{font-size:.85rem;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:15px}
+.comparison{border-top:1px solid var(--line);padding-top:26px}
+.comparison h2{font-size:1.5rem}
+.preview-keyword{font:inherit;color:inherit;letter-spacing:inherit;border:0;padding:0;background:none;cursor:help;text-decoration:underline dotted #000;text-decoration-thickness:2px;text-underline-offset:.2em}
+.reply-popup{position:fixed;z-index:100;width:min(360px,calc(100vw - 16px));max-height:65vh;overflow:auto;box-sizing:border-box;padding:14px;border:1px solid #777;border-radius:8px;background:#fff;box-shadow:0 4px 20px #0004;font:14px/1.45 system-ui}
+.reply-popup[hidden]{display:none}
+.reply-popup h2{font-size:1.1em;margin:0 32px 8px 0}
+.reply-popup p{margin:5px 0}
+#reply-close{float:right;font:inherit;cursor:pointer}
+.site-footer{display:flex;gap:20px;flex-wrap:wrap;padding-block:24px;font-size:.88rem;color:var(--muted)}
+@media(forced-colors:active){.preview-keyword{text-decoration-color:LinkText}}

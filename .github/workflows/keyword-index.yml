@@ -20,6 +20,8 @@ jobs:
       - run: python tools/generate-keywords.py responses
       - name: Test additions, withdrawals and large indexes
         run: python tools/test-keywords.py
+      - name: Test demo pages and response fixtures
+        run: python tools/test-demo.py
   publish:
     needs: validate
     permissions:
