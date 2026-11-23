@@ -1,0 +1,66 @@
+# Right to Reply — Editorial and Participation Rules
+
+These rules apply equally to every participating political party. **Right to Reply is an independent, politically neutral project.** It does not endorse, oppose or favour any party, candidate, ideology or political position. It provides a right of reply, not an endorsement or an independent certification of the party's views.
+
+## 1. Who may participate
+
+- Participation is limited to **officially registered UK political parties**, as listed on the relevant Electoral Commission register. Think tanks, pressure groups, campaign movements, private individuals and other organisations are not eligible to submit official replies.
+- Every eligible party is offered the **same opportunity, terms, editorial rules and technical capabilities**. The initial invitation is to be extended to all eligible parties on the same basis; parties may join later.
+- Each party must identify **one authorised GitHub account** to submit its content. No alternate account, unofficial supporter or third-party organisation may submit material on the party's behalf. Authorisation must be confirmed before publication.
+- A party may submit responses only in its own name. It cannot create responses that impersonate, purport to represent or are branded as another party.
+- A reply is displayed only when **that party is mentioned and its approved keyword or phrase matches**. Parties choose the keywords or phrases associated with their own positions, subject to the same published technical and editorial safeguards.
+
+## 2. Published content and format
+
+Each approved entry comprises an identifying party/trigger, a **single-line plain-text response**, and a required expanded plain-text description of **no more than 255 characters**. No line breaks are permitted in the one-line response. The test placeholders are:
+
+> Your one line response to the keyword goes here
+
+> An extended description of up to 255 characters goes here, no links.
+
+- **No links in published content**: no URLs, redirects, clickable destinations, embedded resources, HTML, scripts, markup, tracking, concealed instructions or executable material.
+- Only explicitly approved plain-text fields may enter the published feed. Unexpected fields and active content must be rejected. Published text must be rendered as inert text, never interpreted as code.
+- All external evidence links, contextual explanations and discussion belong **in the public pull request only**, never in the user-facing response or extension payload.
+- A party's submission must not change the extension's behaviour, code, security settings or distribution mechanism. The extension must consume only validated, owner-approved published content, not unreviewed PR branches or party-controlled resources.
+
+## 3. Accuracy, evidence and quotations
+
+- **Every factual claim must be supported by credible, reputable and independently checkable evidence** supplied in the PR. Evidence must directly substantiate the specific claim, with relevant dates, context and qualifications. A source merely mentioning a subject is not sufficient.
+- **Quotations are held to the same standard as direct claims.** Quotes must be authentic, accurately attributed, contextualised and supported by evidence. Quoting an unsupported factual assertion does not make that assertion established fact.
+- No selective statistics, cherry-picked quotations, misleading omissions or distortions that materially alter a reader's understanding. Where uncertainty or important contrary evidence is relevant, it must not be concealed.
+- Clearly distinguish **established facts, party opinions, values, proposals and predictions**. Predictions are not facts; material assumptions and uncertainty must be made clear.
+- Claims about other parties' or individuals' positions must be fairly and accurately represented. Do not fabricate or mischaracterise another party's policies.
+- Evidence and claims must remain current. Include dates for time-dependent statistics, statements or policy positions where relevant.
+
+## 4. No manipulation or abuse
+
+Content must not use deceptive or manipulative techniques described in **Defeating Manipulation**, including whataboutery/whataboutism, straw-man arguments, false dilemmas, unsupported insinuations, manufactured urgency or attempts to mislead through emotion or context.
+
+Application is **context-sensitive**: legitimate policy comparison, clearly labelled opinion and ordinary emotional expression are not automatically prohibited. The issue is their deceptive or manipulative use.
+
+- Address the keyword's actual subject; do not divert criticism into an unrelated attack on another party.
+- No personal abuse, dehumanisation, discriminatory scapegoating or unsupported accusations.
+- No false impressions of consensus, certainty, endorsement or authority.
+
+## 5. Public PR process and review
+
+- **The sole mechanism for adding, amending or replacing party content is a public GitHub pull request.** Supporting evidence, links, corrections, objections, discussions and review decisions must be on the public record. No private content negotiations or off-record editorial decisions.
+- Every proposed factual assertion and quotation must be supported in the PR. The reviewer may request changes, additional evidence or clarification before approval.
+- **No guarantees whatsoever are made about PR review or response times.** Review priority is at the repository owner's discretion, taking account of the contributor's honesty, accuracy, transparency, cooperation and respectful conduct.
+- Misleading submissions, repeated rule violations, abusive behaviour or attempts to manipulate review may delay review or lead to rejection.
+- **No difference in treatment or review priority may be based on political affiliation, ideology, viewpoint or whether the owner agrees with the contributor.** The same standards and opportunities apply to everyone; equal opportunity does not guarantee equal turnaround or acceptance.
+- Rejections must identify the specific published rule(s) at issue. Contributors may challenge decisions in the public PR discussion. The owner retains final editorial control.
+
+## 6. Corrections and immediate removal
+
+- Parties must submit a new public PR for any proposed change. Previously approved content cannot be altered silently.
+- **If facts change, new evidence materially contradicts the evidence previously supplied, or accepted evidence becomes inaccurate, unreliable or misleading, the owner may suspend or remove affected content immediately and without prior warning or consultation.**
+- The reason for any removal must subsequently be documented publicly, with the evidence or explanation as appropriate. Removal does not itself imply dishonesty by the contributor.
+- A party may submit updated wording and evidence through a new public PR, subject to the same rules.
+- These correction and removal powers are applied without political favouritism.
+
+## 7. Security and publication authority
+
+Review approval is not permission to execute contributor-supplied code. Untrusted PR links and files must not be promoted into the published data or used to alter extension code. Only approved, validated releases are suitable for distribution. Technical validation may assist reviewers, but **the repository owner makes the final publication decision**.
+
+This document governs contributions to this test repository and is intended to be applied consistently to any future party-specific repositories.
