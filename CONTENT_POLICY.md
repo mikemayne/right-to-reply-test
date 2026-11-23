@@ -51,9 +51,9 @@ Application is **context-sensitive**: legitimate policy comparison, clearly labe
 - **No difference in treatment or review priority may be based on political affiliation, ideology, viewpoint or whether the owner agrees with the contributor.** The same standards and opportunities apply to everyone; equal opportunity does not guarantee equal turnaround or acceptance.
 - Rejections must identify the specific published rule(s) at issue. Contributors may challenge decisions in the public PR discussion. The owner retains final editorial control.
 
-## 6. Abusive language and GitHub account enforcement
+## 6. Abusive conduct and GitHub account enforcement
 
-- **Any abusive language in submissions, PR descriptions, comments or review discussions will be flagged.** Abusive conduct may be reported to GitHub for moderation and enforcement under its own rules. Political disagreement or good-faith criticism of a policy is not, by itself, abuse.
+- **All abusive conduct in submissions, PR descriptions, comments or review discussions will be flagged.** This includes abusive language, harassment, intimidation and other abusive behaviour. Abusive conduct may be reported to GitHub for moderation and enforcement under its own rules. Political disagreement or good-faith criticism of a policy is not, by itself, abuse.
 - Contributors are responsible for the conduct and continued availability of their party's **single nominated GitHub account**. The repository owner cannot control, reverse or guarantee protection from GitHub moderation or account restrictions.
 - **If GitHub suspends or bans that account, the party must take the matter up directly with GitHub.** Right to Reply will not negotiate or appeal on the party's behalf, bypass the restriction, or accept a substitute account in contravention of the one-account rule.
 - GitHub alone decides the status of GitHub accounts. The project's editorial decisions and conduct rules continue to be applied equally to every party, irrespective of political affiliation or viewpoint.
