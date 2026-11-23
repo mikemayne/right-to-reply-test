@@ -32,6 +32,27 @@ Each approved entry comprises an identifying party/trigger, a **single-line plai
 - Claims about other parties' or individuals' positions must be fairly and accurately represented. Do not fabricate or mischaracterise another party's policies.
 - Evidence and claims must remain current. Include dates for time-dependent statistics, statements or policy positions where relevant.
 
+### Accepted sources of factual evidence
+
+The following criteria apply equally to every party. Use the source appropriate to the claim, rather than relying on a single organisation as the authority on every subject.
+
+| Type of claim | Accepted evidence |
+| --- | --- |
+| Established historical facts | [Encyclopaedia Britannica](https://www.britannica.com/), [The National Archives](https://www.nationalarchives.gov.uk/) or equivalent national archives, recognised academic historical works (such as [Cambridge Histories](https://www.cambridge.org/core/publications/collections/cambridge-histories)), specialist historical reference works (such as the [Oxford Dictionary of National Biography](https://academic.oup.com/oxford-dictionary-of-national-biography)), and peer-reviewed historical research. Wikipedia may be used to locate evidence; cite the underlying qualifying references directly. |
+| Economic, demographic and other statistics | [Office for National Statistics](https://www.ons.gov.uk/), [Office for Budget Responsibility](https://obr.uk/), or equivalent official statistical authorities and official published datasets appropriate to the claim. Identify the period, measure and relevant limitations. |
+| A party's own policy | Its official published manifesto, policy document or authorised public statement. This establishes the party's stated position, not the truth of factual assertions made within it. |
+| Parliamentary statements and proceedings | [Hansard](https://hansard.parliament.uk/) and equivalent official parliamentary records. A record establishes what was said or done, not necessarily the truth of claims made in a debate. |
+| Legislation | [legislation.gov.uk](https://www.legislation.gov.uk/) or the equivalent official legislation source in the relevant jurisdiction. Identify the applicable version, commencement and amendments. |
+| Scientific and medical claims | Relevant published peer-reviewed research, preferably systematic reviews, meta-analyses or authoritative evidence assessments where available. Do not present a single study as established consensus. |
+
+Newspaper articles, opinion pieces, social media posts, AI-generated answers and unsourced Wikipedia passages are not sufficient evidence of factual claims on their own. They may help locate qualifying evidence. This restriction does not prevent citing an original publication as evidence of what it actually published or said.
+
+For historical claims, distinguish documented events and dates from disputed explanations, interpretations and motives. Do not treat an original record as proof of every assertion it contains. Where a material historical interpretation is disputed, use relevant independent academic scholarship, acknowledge significant uncertainty and avoid presenting one interpretation as settled fact.
+
+If a factual claim cannot be supported by the appropriate qualifying evidence, omit it, narrow it to what the evidence establishes, or identify it accurately as an opinion where appropriate. An opinion label does not exempt its factual premises from these rules. The reviewer may request corroboration where sources conflict; no source is automatically conclusive merely because it appears in the table.
+
+Provide direct links to the relevant record, passage or dataset, with a date and page, section or table number where applicable. If citing a book or subscription publication, provide sufficient bibliographic detail and a publicly checkable supporting reference or lawful accessible extract. Keep all evidence in the public PR, never in the published response. Contributors are responsible for supplying and checking it.
+
 ## 4. No manipulation or abuse
 
 Content must not use deceptive or manipulative techniques described in **Defeating Manipulation**, including whataboutery/whataboutism, straw-man arguments, false dilemmas, unsupported insinuations, manufactured urgency or attempts to mislead through emotion or context.
