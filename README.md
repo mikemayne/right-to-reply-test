@@ -1,5 +1,7 @@
 # Right to Reply Test
 
+**New to GitHub?** [How to set up ChatGPT and submit updates without coding](CHATGPT_GUIDE.md).
+
 Test source configuration for **Right to Reply**, an independent, politically neutral right-of-reply project for officially registered UK political parties.
 
 This repository publishes one fictional example response for testing the browser extension. It does not represent a participating political party. The extension reads `party.json`, `identifiers.json` and the Markdown files listed in `party.json` from `main`. Proposed party contributions must be made through a public pull request and reviewed under exactly the same rules for every party.
