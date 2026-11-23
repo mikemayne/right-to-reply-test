@@ -27,4 +27,6 @@ Links to reputable evidence **are allowed and encouraged in the public PR**. The
 
 Only approved changes may be released. The test feed currently has no participating parties; sample placeholder text is for documentation, not a live political reply.
 
+**Abusive language is not tolerated.** Abusive language in the PR or its discussion will be flagged and may be reported to GitHub. If the party's sole nominated account is suspended or banned by GitHub, **the party must resolve that directly with GitHub**. Right to Reply cannot reverse GitHub's decision or accept a replacement account to circumvent the restriction. Legitimate criticism and political disagreement are not themselves abuse.
+
 Review times are **not guaranteed**. Conduct, accuracy and cooperation affect prioritisation, but political positions do not. See [the full policy](CONTENT_POLICY.md) for rejection, challenge, correction and immediate-removal rules.
