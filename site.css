@@ -66,5 +66,4 @@ button:focus-visible,a:focus-visible{outline:3px solid #217d85;outline-offset:4p
 .reply-short:focus-visible,#reply-close:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
 .reply-detail{margin:0 12px;padding:10px 0 12px;border-top:1px solid #ddd;color:#202124}
 .reply-detail strong{font-size:12px;display:block}
-.reply-source-note{margin:0!important;padding:0 12px 12px;font:400 11px/1.4 system-ui,sans-serif;color:#505050}
-@media(forced-colors:active){.reply-popup,.reply-toolbar,.reply-item,.reply-short,.reply-detail,#reply-close{background:Canvas;color:CanvasText;border-color:CanvasText;box-shadow:none}.reply-brand small,.reply-source-note{color:CanvasText}}
+@media(forced-colors:active){.reply-popup,.reply-toolbar,.reply-item,.reply-short,.reply-detail,#reply-close{background:Canvas;color:CanvasText;border-color:CanvasText;box-shadow:none}.reply-brand small{color:CanvasText}}
