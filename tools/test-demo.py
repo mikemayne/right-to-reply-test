@@ -45,3 +45,13 @@ for keyword in set(preview.keywords):
     assert len(lines) == 3 and lines[1] == ""
     assert 0 < len(lines[0]) <= 128 and 0 < len(lines[2]) <= 255
 print("Demo article parity, plain test page and response fixtures passed.")
+
+
+five = parse("five-parties.html")
+assert len(five.articles) == 1
+assert len(five.keywords) == 3
+assert "five-parties.js" in five.scripts and "preview.js" in five.scripts
+assert "five-parties.js" not in preview.scripts and "five-parties.js" not in test.scripts
+assert "reply-logo" in (root / "index.html").read_text()
+assert "reply-logo" in (root / "five-parties.html").read_text()
+print("Standalone five-party preview checks passed.")

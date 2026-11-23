@@ -22,6 +22,16 @@ jobs:
         run: python tools/test-keywords.py
       - name: Test demo pages and response fixtures
         run: python tools/test-demo.py
+  preview-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - run: npm install --no-save --no-package-lock playwright
+      - run: npx playwright install --with-deps chromium
+      - run: node tools/test-preview.mjs
   publish:
     needs: validate
     permissions:

@@ -3,8 +3,17 @@
   const popup = document.querySelector('#reply-popup');
   const body = document.querySelector('#reply-body');
   const closeButton = document.querySelector('#reply-close');
+  const fake = globalThis.RightToReplyPreview;
   const cache = new Map();
   let anchor, pinned = false, timer, sequence = 0;
+  function shuffled(items) {
+    const result = [...items];
+    for (let i = result.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [result[i], result[j]] = [result[j], result[i]];
+    }
+    return result;
+  }
   function place() {
     if (!anchor || popup.hidden) return;
     const r = anchor.getBoundingClientRect(), width = popup.offsetWidth, height = popup.offsetHeight;
@@ -24,9 +33,10 @@
   }
   function delay() {
     clearTimeout(timer);
-    if (!pinned) timer = setTimeout(() => close(), 220);
+    if (!pinned) timer = setTimeout(() => close(), 250);
   }
-  async function reply(keyword) {
+  async function replies(keyword) {
+    if (fake) return fake[keyword] ?? [];
     if (!cache.has(keyword)) {
       const task = (async () => {
         const res = await fetch('responses/' + encodeURIComponent(keyword + '.md'), {credentials:'omit', redirect:'error'});
@@ -36,32 +46,69 @@
         const plain = (s, max) => s && s.trim() === s && Array.from(s).length <= max &&
           !/[<>\p{Cc}\p{Cf}]|https?:|www\.|mailto:|javascript:/iu.test(s);
         if (raw.length > 8192 || lines.length !== 3 || lines[1] !== '' || !plain(lines[0],128) || !plain(lines[2],255)) throw new Error('Invalid response');
-        return [lines[0], lines[2]];
+        return [{name:'Example Party',color:'#000000',short:lines[0],long:lines[2]}];
       })();
       cache.set(keyword,task);
       task.catch(() => cache.delete(keyword));
     }
     return cache.get(keyword);
   }
+  function row(party, index) {
+    const item = document.createElement('div');
+    item.className = 'reply-item';
+    item.style.setProperty('--party-color', party.color);
+    const short = document.createElement('button');
+    short.type = 'button';
+    short.className = 'reply-short';
+    short.setAttribute('aria-expanded','false');
+    const sentence = document.createElement('span');
+    sentence.textContent = party.short;
+    const chevron = document.createElement('span');
+    chevron.className = 'reply-chevron';
+    chevron.setAttribute('aria-hidden','true');
+    short.append(sentence, chevron);
+    const detail = document.createElement('div');
+    detail.className = 'reply-detail';
+    detail.hidden = true;
+    detail.id = 'reply-detail-' + sequence + '-' + index;
+    short.setAttribute('aria-controls',detail.id);
+    const name = document.createElement('strong');
+    name.textContent = party.name;
+    const description = document.createElement('p');
+    description.textContent = party.long;
+    detail.append(name, description);
+    short.addEventListener('click', () => {
+      pinned = true;
+      clearTimeout(timer);
+      detail.hidden = !detail.hidden;
+      short.setAttribute('aria-expanded', String(!detail.hidden));
+      place();
+    });
+    item.append(short,detail);
+    return item;
+  }
   async function open(button, pin) {
     if (pinned && !pin) return;
     clearTimeout(timer);
-    if (anchor === button && !pin) return;
+    if (anchor === button && !popup.hidden) {
+      if (pin) {
+        pinned = true;
+        (body.querySelector('.reply-short') ?? closeButton).focus({preventScroll:true});
+      }
+      return;
+    }
     anchor = button;
     pinned = pin;
     const current = ++sequence;
-    body.textContent = 'Loading response…';
+    body.textContent = 'Loading responses…';
     popup.hidden = false;
     place();
     if (pin) closeButton.focus({preventScroll:true});
     try {
-      const lines = await reply(button.dataset.keyword);
+      const matches = shuffled(await replies(button.dataset.keyword));
       if (current !== sequence) return;
-      body.replaceChildren(...lines.map(line => {
-        const p = document.createElement('p');
-        p.textContent = line;
-        return p;
-      }));
+      body.replaceChildren(...matches.map(row));
+      if (!matches.length) body.textContent = 'Response currently unavailable.';
     } catch {
       if (current !== sequence) return;
       body.textContent = 'Response currently unavailable.';
@@ -69,6 +116,15 @@
     place();
   }
   for (const button of document.querySelectorAll('.preview-keyword')) {
+    if (fake) {
+      const colors = shuffled((fake[button.dataset.keyword] ?? []).map(p => p.color));
+      if (colors.length === 1) button.style.setProperty('--keyword-color',colors[0]);
+      else if (colors.length > 1) {
+        button.classList.add('multi-keyword');
+        button.style.setProperty('--keyword-segments','linear-gradient(to right,' +
+          colors.map((c,i) => c + ' ' + (100*i/colors.length) + '% ' + (100*(i+1)/colors.length) + '%').join(',') + ')');
+      }
+    }
     button.addEventListener('pointerenter', e => { if(e.pointerType === 'mouse') open(button,false); });
     button.addEventListener('pointerleave', delay);
     button.addEventListener('click', () => open(button,true));

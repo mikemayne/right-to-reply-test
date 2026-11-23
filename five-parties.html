@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="favicon.png">
+<title>Five-party preview | Right to Reply</title>
+<link rel="stylesheet" href="site.css">
+<script src="five-parties.js" defer></script>
+<script src="preview.js" defer></script>
+</head>
+<body>
+<header class="project-header"><div class="shell">
+<a class="brand" href="./">Right to Reply <span>DEMO</span></a>
+<div class="page-switch" aria-label="Demonstration pages"><a href="./">Interactive preview</a><a href="test.html">Extension test page</a><a href="five-parties.html" aria-current="page">Five-party preview</a></div>
+</div></header>
+<section class="intro shell">
+<p class="eyebrow">Interface mock-up · Fictional data</p>
+<h1>Five parties, one keyword</h1>
+<p>See how the popup behaves when several parties reply to the same phrase. Hover, click or tap an underline. Only the short responses appear initially. Select a coloured sentence to expand its party name and longer response. Each response can be expanded or collapsed independently.</p>
+<p class="note">All five parties and their responses are invented for this interface test. No extension or external party repositories are needed.</p>
+</section>
+<main class="paper">
+<div class="masthead shell"><p class="newspaper-label">FICTIONAL ARTICLE</p><div class="newspaper-name">The Example Gazette</div></div>
+<article class="story shell">
+<p class="eyebrow">Shared keyword example</p>
+<h2>Lorem ipsum dolor sit amet</h2>
+<p class="byline">By Lorem Ipsum · Fictional report</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Silverbrook Party, Copperleaf Party, Alderstone Party, Violet Harbour Party and Lantern Party enim ad minim veniam, sed do eiusmod tempor incididunt ut labore et dolore <button class="preview-keyword" data-keyword="magna aliqua" type="button" aria-haspopup="dialog">magna aliqua</button>.</p>
+<p>Ut enim ad minim veniam, quis nostrud exercitation <button class="preview-keyword" data-keyword="ullamco laboris" type="button" aria-haspopup="dialog">ullamco laboris</button> nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in <button class="preview-keyword" data-keyword="voluptate velit" type="button" aria-haspopup="dialog">voluptate velit</button> esse cillum dolore eu fugiat nulla pariatur.</p>
+<p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.</p>
+<p class="note">First underline: five replies. Second underline: two replies. Third underline: one reply.</p>
+</article>
+</main>
+<section id="reply-popup" class="reply-popup" role="dialog" aria-label="Right to Reply" hidden>
+  <div class="reply-toolbar">
+    <img class="reply-logo" src="favicon.png" width="28" height="28" alt="Right to Reply">
+    <button id="reply-close" type="button" aria-label="Close response">×</button>
+  </div>
+  <div id="reply-body" aria-live="polite"></div>
+</section>
+</body>
+</html>
