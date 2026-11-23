@@ -1,1 +1,8 @@
-{"id":"example-party","name":"Example Party","color":"#000000"}
+{
+  "id": "example-party",
+  "name": "Example Party",
+  "color": "#000000",
+  "keywords": [
+    "example keyword"
+  ]
+}
