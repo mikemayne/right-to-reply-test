@@ -1,0 +1,51 @@
+name: Publish keyword index
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: keyword-index-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - run: python tools/generate-keywords.py responses
+      - name: Test additions, withdrawals and large indexes
+        run: python tools/test-keywords.py
+  publish:
+    needs: validate
+    permissions:
+      contents: write
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: main
+      - name: Publish filenames only
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/generate-keywords.py responses > "$RUNNER_TEMP/keywords.json"
+          blob=$(git hash-object -w "$RUNNER_TEMP/keywords.json")
+          tree=$(printf '100644 blob %s\tkeywords.json\n' "$blob" | git mktree)
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git ls-remote --exit-code --heads origin refs/heads/keyword-index >/dev/null; then
+            git fetch --no-tags origin refs/heads/keyword-index
+            parent=$(git rev-parse FETCH_HEAD)
+            if [ "$(git rev-parse "$parent^{tree}")" = "$tree" ]; then exit 0; fi
+            commit=$(git commit-tree "$tree" -p "$parent" -m 'Regenerate approved keyword index')
+          else
+            commit=$(git commit-tree "$tree" -m 'Generate approved keyword index')
+          fi
+          git push origin "$commit:refs/heads/keyword-index"

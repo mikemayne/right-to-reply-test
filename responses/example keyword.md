@@ -1,3 +1,3 @@
-Lorem ipsum dolor sit amet.
+Duis aute irure dolor in reprehenderit.
 
-Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Excepteur sint occaecat cupidatat non proident.
