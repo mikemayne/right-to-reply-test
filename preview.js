@@ -116,15 +116,6 @@
     place();
   }
   for (const button of document.querySelectorAll('.preview-keyword')) {
-    if (fake) {
-      const colors = shuffled((fake[button.dataset.keyword] ?? []).map(p => p.color));
-      if (colors.length === 1) button.style.setProperty('--keyword-color',colors[0]);
-      else if (colors.length > 1) {
-        button.classList.add('multi-keyword');
-        button.style.setProperty('--keyword-segments','linear-gradient(to right,' +
-          colors.map((c,i) => c + ' ' + (100*i/colors.length) + '% ' + (100*(i+1)/colors.length) + '%').join(',') + ')');
-      }
-    }
     button.addEventListener('pointerenter', e => { if(e.pointerType === 'mouse') open(button,false); });
     button.addEventListener('pointerleave', delay);
     button.addEventListener('click', () => open(button,true));
