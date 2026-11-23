@@ -6,9 +6,10 @@ These rules apply equally to every participating political party. **Right to Rep
 
 - Participation is limited to **officially registered UK political parties**, as listed on the relevant Electoral Commission register. Think tanks, pressure groups, campaign movements, private individuals and other organisations are not eligible to submit official replies.
 - Every eligible party is offered the **same opportunity, terms, editorial rules and technical capabilities**. The initial invitation is to be extended to all eligible parties on the same basis; parties may join later.
-- Each party must identify **one authorised GitHub account** to submit its content. No alternate account, unofficial supporter or third-party organisation may submit material on the party's behalf. Authorisation must be confirmed before publication.
+- Each party must identify **one authorised GitHub account at a time** to submit its content. The account must be used and secured in accordance with GitHub's terms; credentials must not be shared. A party may request a replacement representative for legitimate personnel changes. The owner must verify the new authorisation and withdraw the previous account's authorisation before accepting submissions from the replacement. No unofficial supporter or third-party organisation may submit material on the party's behalf.
 - A party may submit responses only in its own name. It cannot create responses that impersonate, purport to represent or are branded as another party.
-- A reply is displayed only when **that party is mentioned and its approved keyword or phrase matches**. Parties choose the keywords or phrases associated with their own positions, subject to the same published technical and editorial safeguards.
+- A reply is displayed only when **that party is mentioned and its approved keyword or phrase matches**. Parties choose the keywords or phrases associated with their own positions, subject to the same published technical and editorial safeguards. Broad policy topics are permitted when the statement directly addresses the topic. Generic connecting words such as `and`, and triggers with no clear connection to the statement, are not permitted.
+- **People's names must not be used as response keywords.** Names may still be listed as approved party identifiers for recognising a reference to that party; this does not make them response triggers.
 
 ## 2. Published content and format
 
@@ -21,6 +22,7 @@ Each approved entry comprises an identifying party/trigger, a **single-line plai
 - **No links in published content**: no URLs, redirects, clickable destinations, embedded resources, HTML, scripts, markup, tracking, concealed instructions or executable material.
 - Only explicitly approved plain-text fields may enter the published feed. Unexpected fields and active content must be rejected. Published text must be rendered as inert text, never interpreted as code.
 - All external evidence links, contextual explanations and discussion belong **in the public pull request only**, never in the user-facing response or extension payload.
+- By submitting content, the party confirms that it owns or has obtained the necessary rights and permissions to publish and license the material, and grants Right to Reply permission to reproduce, display and redistribute its approved submissions through the extension and associated project materials without payment. Do not submit copyrighted third-party material without the necessary permission or other lawful basis. A party cannot grant rights it does not hold.
 - A party's submission must not change the extension's behaviour, code, security settings or distribution mechanism. The extension must consume only validated, owner-approved published content, not unreviewed PR branches or party-controlled resources.
 
 ## 3. Accuracy, evidence and quotations
@@ -39,6 +41,8 @@ Content must not use deceptive or manipulative techniques described in **Defeati
 Application is **context-sensitive**: legitimate policy comparison, clearly labelled opinion and ordinary emotional expression are not automatically prohibited. The issue is their deceptive or manipulative use.
 
 - Address the keyword's actual subject; do not divert criticism into an unrelated attack on another party.
+- Right to Reply is a platform for political arguments, not personal accusations. Responses may address policies, proposals, voting records, political positions and their consequences, including fair criticism and comparison of party policies.
+- **No allegations of personal misconduct or criminality, personal attacks, or other defamatory allegations about identifiable individuals**, whether named or identifiable from context. This restriction applies to the short statement, extended description, keyword, and public submission or review discussion. Do not use indirect descriptions to evade it. The project may reject such material even if a contributor considers it true or in the public interest.
 - No personal abuse, dehumanisation, discriminatory scapegoating or unsupported accusations.
 - No false impressions of consensus, certainty, endorsement or authority.
 
@@ -46,7 +50,7 @@ Application is **context-sensitive**: legitimate policy comparison, clearly labe
 
 - **The sole mechanism for adding, amending or replacing party content is a public GitHub pull request.** Supporting evidence, links, corrections, objections, discussions and review decisions must be on the public record. No private content negotiations or off-record editorial decisions.
 - Every proposed factual assertion and quotation must be supported in the PR. The reviewer may request changes, additional evidence or clarification before approval.
-- **No guarantees whatsoever are made about PR review or response times.** Review priority is at the repository owner's discretion, taking account of the contributor's honesty, accuracy, transparency, cooperation and respectful conduct.
+- **No guarantees whatsoever are made about PR review or response times.** Review priority is at the repository owner's discretion, taking account of the contributor's honesty, accuracy, transparency, cooperation and respectful conduct. Well-considered, properly evidenced submissions may be prioritised over bulk or poorly prepared submissions.
 - Misleading submissions, repeated rule violations, abusive behaviour or attempts to manipulate review may delay review or lead to rejection.
 - **No difference in treatment or review priority may be based on political affiliation, ideology, viewpoint or whether the owner agrees with the contributor.** The same standards and opportunities apply to everyone; equal opportunity does not guarantee equal turnaround or acceptance.
 - Rejections must identify the specific published rule(s) at issue. Contributors may challenge decisions in the public PR discussion. The owner retains final editorial control.
@@ -54,15 +58,16 @@ Application is **context-sensitive**: legitimate policy comparison, clearly labe
 ## 6. Abusive conduct and GitHub account enforcement
 
 - **All abusive conduct in submissions, PR descriptions, comments or review discussions will be flagged.** This includes abusive language, harassment, intimidation and other abusive behaviour. Abusive conduct may be reported to GitHub for moderation and enforcement under its own rules. Political disagreement or good-faith criticism of a policy is not, by itself, abuse.
-- Contributors are responsible for the conduct and continued availability of their party's **single nominated GitHub account**. The repository owner cannot control, reverse or guarantee protection from GitHub moderation or account restrictions.
-- **If GitHub suspends or bans that account, the party must take the matter up directly with GitHub.** Right to Reply will not negotiate or appeal on the party's behalf, bypass the restriction, or accept a substitute account in contravention of the one-account rule.
+- Contributors are responsible for the conduct and continued availability of their party's **single nominated GitHub account at any given time**. The repository owner cannot control, reverse or guarantee protection from GitHub moderation or account restrictions.
+- **If GitHub suspends or bans that account, the party must take the matter up directly with GitHub.** Right to Reply will not negotiate or appeal on the party's behalf or facilitate evasion of GitHub restrictions. The owner reserves the right to refuse authorisation of a replacement account following a suspension or ban. Legitimate changes of representative are otherwise permitted under section 1.
 - GitHub alone decides the status of GitHub accounts. The project's editorial decisions and conduct rules continue to be applied equally to every party, irrespective of political affiliation or viewpoint.
 
 ## 7. Corrections and immediate removal
 
 - Parties must submit a new public PR for any proposed change. Previously approved content cannot be altered silently.
 - **If facts change, new evidence materially contradicts the evidence previously supplied, or accepted evidence becomes inaccurate, unreliable or misleading, the owner may suspend or remove affected content immediately and without prior warning or consultation.**
-- The reason for any removal must subsequently be documented publicly, with the evidence or explanation as appropriate. Removal does not itself imply dishonesty by the contributor.
+- The owner may also reject, suspend or remove content without prior notice if it presents a potential legal risk to the project, including defamation or copyright infringement, irrespective of whether the underlying claim is ultimately proven true.
+- The reason for any removal must subsequently be documented publicly to the extent lawful and appropriate, without republishing potentially unlawful material or exposing private information. Removal does not itself imply dishonesty by the contributor.
 - A party may submit updated wording and evidence through a new public PR, subject to the same rules.
 - These correction and removal powers are applied without political favouritism.
 
