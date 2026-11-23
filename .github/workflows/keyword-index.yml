@@ -1,15 +1,29 @@
 name: Publish keyword index
 on:
+  pull_request:
   push:
     branches: [main]
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 concurrency:
-  group: keyword-index
+  group: keyword-index-${{ github.ref }}
   cancel-in-progress: false
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - run: python tools/generate-keywords.py responses
+      - name: Test additions, withdrawals and large indexes
+        run: python tools/test-keywords.py
   publish:
+    needs: validate
+    permissions:
+      contents: write
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 5
