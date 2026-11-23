@@ -31,6 +31,19 @@ try {
   assert.match(await page.locator('.reply-detail:visible strong').textContent(),/Party$/);
   await first.click();
   assert.equal(await page.locator('.reply-detail:visible').count(),0);
+  const last = page.locator('.reply-short').last();
+  await last.scrollIntoViewIfNeeded();
+  const pageY = await page.evaluate(()=>scrollY);
+  await last.click();
+  const geometry = await page.locator('.reply-detail:visible').evaluate(detail=>{
+    const panel = document.querySelector('#reply-popup');
+    return {bottom:detail.getBoundingClientRect().bottom,
+      panelBottom:panel.getBoundingClientRect().top + panel.clientTop + panel.clientHeight,
+      scrollTop:panel.scrollTop, pageY:scrollY};
+  });
+  assert.ok(geometry.bottom <= geometry.panelBottom + 1, 'expanded final reply must be visible');
+  assert.ok(geometry.scrollTop > 0, 'overflowing panel must scroll');
+  assert.equal(geometry.pageY,pageY,'article must not scroll when a reply expands');
   await page.keyboard.press('Escape');
   await page.locator('[data-keyword="ullamco laboris"]').click();
   await page.waitForFunction(()=>document.querySelectorAll('.reply-short').length===2);
