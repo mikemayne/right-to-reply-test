@@ -16,11 +16,19 @@
   }
   function place() {
     if (!anchor || popup.hidden) return;
-    const r = anchor.getBoundingClientRect(), width = popup.offsetWidth, height = popup.offsetHeight;
-    popup.style.left = Math.max(8, Math.min(r.left, innerWidth - width - 8)) + 'px';
+    const r = anchor.getBoundingClientRect();
     const below = r.bottom + 6;
-    popup.style.top = Math.max(8, Math.min(below + height > innerHeight && r.top > height + 6 ?
-      r.top - height - 6 : below, innerHeight - height - 8)) + 'px';
+    const roomBelow = Math.max(0, innerHeight - 8 - below);
+    const roomAbove = Math.max(0, r.top - 14);
+    const limit = Math.min(innerHeight * .72, 520);
+    // Never place the overlay over its trigger: a hover must not intercept
+    // the click that pins the popup. Scroll replies inside the available space.
+    const above = Math.min(popup.scrollHeight + 4, limit) > roomBelow && roomAbove > roomBelow;
+    const room = above ? roomAbove : roomBelow;
+    popup.style.maxHeight = Math.min(limit, room) + 'px';
+    const width = popup.offsetWidth, height = popup.offsetHeight;
+    popup.style.left = Math.max(8, Math.min(r.left, innerWidth - width - 8)) + 'px';
+    popup.style.top = Math.max(8, Math.min(above ? r.top - height - 6 : below, innerHeight - height - 8)) + 'px';
   }
   function close(restore = false) {
     clearTimeout(timer);
