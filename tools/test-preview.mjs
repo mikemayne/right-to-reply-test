@@ -12,22 +12,13 @@ try {
   browser = await chromium.launch({headless:true});
   const page = await browser.newPage({viewport:{width:900,height:760}});
   await page.goto(base);
-  await page.locator('[data-keyword="magna aliqua"]').click();
-  await page.locator('.reply-short').waitFor();
-  assert.equal(await page.locator('.reply-short').count(),1);
-  assert.equal(await page.locator('.reply-detail:visible').count(),0);
-  assert.equal(await page.locator('.reply-logo').isVisible(),true);
-  assert.equal(await page.locator('.reply-brand strong').textContent(),'Independent browser extension');
-  assert.equal(await page.locator('.reply-brand small').textContent(),'Not supplied by this publication');
-  await page.locator('.reply-short').click();
-  assert.equal(await page.locator('.reply-detail:visible strong').textContent(),'Example Party');
-  await page.keyboard.press('Escape');
-  assert.equal(await page.locator('#reply-popup').isVisible(),false);
-  await page.goto(base+'five-parties.html');
   const shared = page.locator('[data-keyword="magna aliqua"]');
   await shared.click();
   await page.waitForFunction(()=>document.querySelectorAll('.reply-short').length===5);
   assert.equal(await page.locator('.reply-detail:visible').count(),0);
+  assert.equal(await page.locator('.reply-logo').isVisible(),true);
+  assert.equal(await page.locator('.reply-brand strong').textContent(),'Independent browser extension');
+  assert.equal(await page.locator('.reply-brand small').textContent(),'Not supplied by this publication');
   const colors = await page.locator('.reply-short').evaluateAll(nodes=>nodes.map(n=>getComputedStyle(n).color));
   assert.equal(new Set(colors).size,1);
   const underlines = await page.locator('.preview-keyword').evaluateAll(nodes=>nodes.map(n=>({color:getComputedStyle(n).textDecorationColor, background:getComputedStyle(n).backgroundImage})));
@@ -48,7 +39,7 @@ try {
   await page.waitForFunction(()=>document.querySelectorAll('.reply-short').length===1);
   await page.goto(base+'test.html');
   assert.equal(await page.locator('.preview-keyword,#reply-popup').count(),0);
-  console.log('Single-party, five-party, expand/collapse and clean test page passed.');
+  console.log('Five-, two- and single-response preview, expand/collapse and clean test page passed.');
 } finally {
   await browser?.close();
   server.kill();

@@ -13,8 +13,7 @@ Published responses are plain text only: a one-line response of up to 128 charac
 
 ## Demonstration website
 
-- [Interactive preview](https://mikemayne.github.io/right-to-reply-test/) — no extension required.
-- [Extension test page](https://mikemayne.github.io/right-to-reply-test/test.html) — the same article with no simulated markup.
-- [Five-party preview](https://mikemayne.github.io/right-to-reply-test/five-parties.html) — standalone fictional interface mock-up with five, two and one matching replies. Its data is not part of the real party feed.
+- [Interactive preview](https://mikemayne.github.io/right-to-reply-test/) — fictional interface mock-up with five, two and one matching replies; no extension required. Its data is not part of the real party feed.
+- [Extension test page](https://mikemayne.github.io/right-to-reply-test/test.html) — a separate article with no simulated markup, using the repository’s example party and response files.
 
-Publish GitHub Pages from `main` at the repository root. To test locally, run `python -m http.server 8000` from the repository root and open `http://localhost:8000/`. The preview reads the same individual Markdown files as the extension. The decorative navigation and separate article are negative controls.
+Publish GitHub Pages from `main` at the repository root. To test locally, run `python -m http.server 8000` from the repository root and open `http://localhost:8000/`. The interactive preview uses local fictional fixtures, while the extension test page uses the actual example-party feed. The decorative navigation and separate article on the extension test page are negative controls.
