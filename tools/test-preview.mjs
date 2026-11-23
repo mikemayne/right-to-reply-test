@@ -17,6 +17,8 @@ try {
   assert.equal(await page.locator('.reply-short').count(),1);
   assert.equal(await page.locator('.reply-detail:visible').count(),0);
   assert.equal(await page.locator('.reply-logo').isVisible(),true);
+  assert.equal(await page.locator('.reply-brand strong').textContent(),'Independent browser extension');
+  assert.equal(await page.locator('.reply-brand small').textContent(),'Not supplied by this publication');
   await page.locator('.reply-short').click();
   assert.equal(await page.locator('.reply-detail:visible strong').textContent(),'Example Party');
   await page.keyboard.press('Escape');

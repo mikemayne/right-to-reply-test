@@ -49,3 +49,22 @@ button:focus-visible,a:focus-visible{outline:3px solid #217d85;outline-offset:4p
 .reply-detail strong{color:var(--party-color)}
 .reply-detail p{margin:4px 0 0}
 @media(forced-colors:active){.reply-detail strong{color:LinkText}}
+
+/* Independent R2R overlay: a fixed, party-neutral visual identity. */
+.reply-popup{width:min(380px,calc(100vw - 16px));max-height:min(72vh,520px);padding:0;border:2px solid #202124;border-radius:12px;background:#f4f4f2;color:#202124;box-shadow:0 8px 28px #0005,0 0 0 3px #fff;line-height:1.5;color-scheme:light}
+.reply-toolbar{position:sticky;top:0;z-index:1;display:flex;align-items:center;gap:10px;justify-content:flex-start;margin:0;padding:12px;background:#202124;color:#fff}
+.reply-logo{width:34px;height:34px;padding:3px;background:#fff;border-radius:5px;flex:none}
+.reply-brand{flex:1;min-width:0}
+.reply-brand strong{display:block;font:700 12px/1.35 system-ui,sans-serif;letter-spacing:.055em;text-transform:uppercase}
+.reply-brand small{display:block;margin-top:3px;font:400 11px/1.35 system-ui,sans-serif;color:#e4e4e4}
+#reply-close{flex:none;border:1px solid #777;background:transparent;color:#fff;font:24px/1 system-ui;cursor:pointer;width:32px;height:32px;border-radius:5px}
+#reply-close:hover{background:#454545}
+#reply-body{padding:10px;display:grid;gap:8px}
+.reply-item,.reply-item+.reply-item{border:1px solid #d3d3d3;border-radius:7px;background:#fff}
+.reply-short{padding:12px;min-height:44px;color:#202124}
+.reply-short:hover{background:#f3f3f3;border-radius:6px}
+.reply-short:focus-visible,#reply-close:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
+.reply-detail{margin:0 12px;padding:10px 0 12px;border-top:1px solid #ddd;color:#202124}
+.reply-detail strong{font-size:12px;display:block}
+.reply-source-note{margin:0!important;padding:0 12px 12px;font:400 11px/1.4 system-ui,sans-serif;color:#505050}
+@media(forced-colors:active){.reply-popup,.reply-toolbar,.reply-item,.reply-short,.reply-detail,#reply-close{background:Canvas;color:CanvasText;border-color:CanvasText;box-shadow:none}.reply-brand small,.reply-source-note{color:CanvasText}}
