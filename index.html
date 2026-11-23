@@ -3,58 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" type="image/png" href="favicon.png">
-<title>Interactive demonstration | Right to Reply</title>
+<link rel="icon" href="favicon.png">
+<title>Interactive preview | Right to Reply</title>
 <link rel="stylesheet" href="site.css">
+<script src="five-parties.js" defer></script>
 <script src="preview.js" defer></script>
 </head>
 <body>
-<header class="project-header">
-  <div class="shell">
-    <a class="brand" href="./">Right to Reply <span>DEMO</span></a>
-    <div class="page-switch" aria-label="Demonstration pages">
-      <a href="./" aria-current="page">Interactive preview</a>
-      <a href="test.html">Extension test page</a>
-      <a href="five-parties.html">Five-party preview</a>
-    </div>
-  </div>
-</header>
-<section class="intro shell" aria-labelledby="intro-title">
-  <p class="eyebrow">No installation needed</p>
-  <h1 id="intro-title">See Right to Reply in action</h1>
-  <p>Right to Reply is a browser extension that gives participating political parties an opportunity to respond to specific keywords when they are mentioned in an article. It does not decide whether an article is accurate or misleading. It simply makes the party's approved response available to the reader.</p>
-  <p>This page simulates the experience without the extension. Hover over, click or tap any dotted underline to see a short response. Select the short statement to reveal the party name and longer response. All underlines and short statements use the same neutral styling. Statements from participating parties are displayed in a randomly determined order, and no party receives preferential treatment. You can also use Tab and Enter.</p>
-  <p class="note">All article content and replies are fictional placeholder text. The newspaper navigation below is decorative and does not lead anywhere.</p>
-  <a class="primary-link" href="test.html">Try with the installed extension <span aria-hidden="true">→</span></a>
+<header class="project-header"><div class="shell">
+<a class="brand" href="./">Right to Reply <span>DEMO</span></a>
+<div class="page-switch" aria-label="Demonstration pages"><a href="./" aria-current="page">Interactive preview</a><a href="test.html">Extension test page</a></div>
+</div></header>
+<section class="intro shell">
+<p class="eyebrow">Interface mock-up · Fictional data</p>
+<h1>See Right to Reply in action</h1>
+<p>Right to Reply is a browser extension that gives participating political parties an opportunity to respond to specific keywords when they are mentioned in an article. It does not decide whether an article is accurate or misleading. It simply makes the party's approved response available to the reader.</p>
+<p>See how the popup behaves when several parties reply to the same phrase. Hover, click or tap an underline. Only the short responses appear initially. Select a short statement to reveal its party name and longer response. All underlines and short statements have the same neutral styling, regardless of party. Statements from participating parties are displayed in a randomly determined order, and no party receives preferential treatment. Each response can be expanded or collapsed independently.</p>
+<p class="note">All five parties and their responses are invented for this interface test. No extension or external party repositories are needed. The newspaper navigation is decorative.</p>
 </section>
 <main class="paper">
-  <div class="masthead shell">
-    <p class="newspaper-label">FICTIONAL NEWSPAPER</p>
-    <div class="newspaper-name">The Example Gazette</div>
+<div class="masthead shell"><p class="newspaper-label">FICTIONAL ARTICLE</p><div class="newspaper-name">The Example Gazette</div>
     <nav class="fake-nav" aria-label="Decorative newspaper navigation">
       <span>Home</span><span>News</span><span>Politics</span><span>Business</span><span>Culture</span><span>Opinion</span><span>example keyword</span>
     </nav>
-  </div>
-  <article class="story shell" aria-labelledby="story-title">
-    <p class="eyebrow">Politics / Sample article</p>
-    <h2 id="story-title">Lorem ipsum dolor sit amet: <button type="button" class="preview-keyword" data-keyword="example keyword" aria-haspopup="dialog">example keyword</button></h2>
-    <p class="byline">By Lorem Ipsum · Fictional report</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore <button type="button" class="preview-keyword" data-keyword="magna aliqua" aria-haspopup="dialog">magna aliqua</button>. Example Party enim ad minim veniam, quis nostrud exercitation <button type="button" class="preview-keyword" data-keyword="ullamco laboris" aria-haspopup="dialog">ullamco laboris</button> nisi ut aliquip ex ea commodo consequat.</p>
-    <p>Duis aute irure dolor in reprehenderit in <button type="button" class="preview-keyword" data-keyword="voluptate velit" aria-haspopup="dialog">voluptate velit</button> esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula.</p>
-    <h3>Vestibulum ante ipsum</h3><p>Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi.</p>
-    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-    <p>Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi auctor lorem non justo. Nam lacus libero, pretium at, lobortis vitae, ultricies et, tellus. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna.</p>
-    <p>Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.</p>
-  </article>
-  <article class="story comparison shell" aria-labelledby="comparison-title">
-    <p class="eyebrow">Separate article / Negative control</p>
-    <h2 id="comparison-title">Integer tincidunt magna aliqua</h2>
-    <p>Lorem ipsum dolor sit amet, example keyword, consectetur adipiscing elit. Nulla facilisi. Duis ullamcorper neque vitae sem.</p>
-    <p class="note">These phrases are not highlighted because this separate article does not mention the participating party.</p>
-  </article>
+</div>
+<article class="story shell">
+<p class="eyebrow">Shared keyword example</p>
+<h2>Lorem ipsum dolor sit amet</h2>
+<p class="byline">By Lorem Ipsum · Fictional report</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Silverbrook Party, Copperleaf Party, Alderstone Party, Violet Harbour Party and Lantern Party enim ad minim veniam, sed do eiusmod tempor incididunt ut labore et dolore <button class="preview-keyword" data-keyword="magna aliqua" type="button" aria-haspopup="dialog">magna aliqua</button>.</p>
+<p>Ut enim ad minim veniam, quis nostrud exercitation <button class="preview-keyword" data-keyword="ullamco laboris" type="button" aria-haspopup="dialog">ullamco laboris</button> nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in <button class="preview-keyword" data-keyword="voluptate velit" type="button" aria-haspopup="dialog">voluptate velit</button> esse cillum dolore eu fugiat nulla pariatur.</p>
+<p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.</p>
+<p class="note">First underline: five replies. Second underline: two replies. Third underline: one reply.</p>
+</article>
 </main>
-<footer class="site-footer shell"><a href="https://github.com/mikemayne/right-to-reply">Extension source</a><a href="https://github.com/mikemayne/right-to-reply-test">Fictional response files</a></footer>
 <section id="reply-popup" class="reply-popup" role="dialog" aria-label="Right to Reply" hidden>
   <div class="reply-toolbar">
     <img class="reply-logo" src="favicon.png" width="28" height="28" alt="Right to Reply">
