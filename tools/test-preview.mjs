@@ -1,0 +1,49 @@
+import assert from 'node:assert/strict';
+import { chromium } from 'playwright';
+import { spawn } from 'node:child_process';
+const server = spawn('python', ['-m','http.server','8765','--bind','127.0.0.1'], {stdio:'ignore'});
+let browser;
+try {
+  const base = 'http://127.0.0.1:8765/';
+  for (let i=0;i<50;i++) {
+    try { if ((await fetch(base)).ok) break; } catch {}
+    await new Promise(r=>setTimeout(r,100));
+  }
+  browser = await chromium.launch({headless:true});
+  const page = await browser.newPage({viewport:{width:900,height:760}});
+  await page.goto(base);
+  await page.locator('[data-keyword="magna aliqua"]').click();
+  await page.locator('.reply-short').waitFor();
+  assert.equal(await page.locator('.reply-short').count(),1);
+  assert.equal(await page.locator('.reply-detail:visible').count(),0);
+  assert.equal(await page.locator('.reply-logo').isVisible(),true);
+  await page.locator('.reply-short').click();
+  assert.equal(await page.locator('.reply-detail:visible strong').textContent(),'Example Party');
+  await page.keyboard.press('Escape');
+  assert.equal(await page.locator('#reply-popup').isVisible(),false);
+  await page.goto(base+'five-parties.html');
+  const shared = page.locator('[data-keyword="magna aliqua"].multi-keyword');
+  await shared.click();
+  await page.waitForFunction(()=>document.querySelectorAll('.reply-short').length===5);
+  assert.equal(await page.locator('.reply-detail:visible').count(),0);
+  const colors = await page.locator('.reply-short').evaluateAll(nodes=>nodes.map(n=>getComputedStyle(n).color));
+  assert.equal(new Set(colors).size,5);
+  const first = page.locator('.reply-short').first();
+  await first.click();
+  assert.equal(await page.locator('.reply-detail:visible').count(),1);
+  assert.match(await page.locator('.reply-detail:visible strong').textContent(),/Party$/);
+  await first.click();
+  assert.equal(await page.locator('.reply-detail:visible').count(),0);
+  await page.keyboard.press('Escape');
+  await page.locator('[data-keyword="ullamco laboris"]').click();
+  await page.waitForFunction(()=>document.querySelectorAll('.reply-short').length===2);
+  await page.keyboard.press('Escape');
+  await page.locator('[data-keyword="voluptate velit"]').click();
+  await page.waitForFunction(()=>document.querySelectorAll('.reply-short').length===1);
+  await page.goto(base+'test.html');
+  assert.equal(await page.locator('.preview-keyword,#reply-popup').count(),0);
+  console.log('Single-party, five-party, expand/collapse and clean test page passed.');
+} finally {
+  await browser?.close();
+  server.kill();
+}
