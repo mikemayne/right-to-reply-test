@@ -7,4 +7,4 @@ This repository publishes one fictional example response for testing the browser
 - [Editorial and participation rules](CONTENT_POLICY.md)
 - [How to contribute and supply public evidence](CONTRIBUTING.md)
 
-Published responses are plain text only: a one-line response and an extended description of up to 255 characters, with no links. Source links and discussion belong in the public PR, not the extension.
+Published responses are plain text only: a one-line response of up to 128 characters and an extended description of up to 255 characters, with no links. Source links and discussion belong in the public PR, not the extension.
