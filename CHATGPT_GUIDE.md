@@ -22,7 +22,7 @@ For example, copy this prompt and replace the placeholders:
 
 > Read the latest README, CONTRIBUTING.md and CONTENT_POLICY.md in [official party repository]. I am contributing from [my GitHub fork]. Prepare a new public pull request to the official repository's main branch, using a fresh branch based on its current main.
 >
-> Keyword: [exact keyword or phrase; not a person's name]
+> Keyword: [exact policy-related keyword or phrase; not a person's name or a direct quote from an opposing party]
 >
 > One-line response: [approved wording, no more than 128 characters]
 >
@@ -36,7 +36,7 @@ For an existing response, just ask to change the relevant text. To withdraw one,
 
 ### Review and submit
 
-- Check that the wording represents your party's approved position, is accurate and meets the length and plain-text restrictions. Check the supporting evidence yourself against the [accepted source criteria](CONTENT_POLICY.md#accepted-sources-of-factual-evidence). Ask ChatGPT to locate and verify qualifying references rather than relying on its answers. Wikipedia is accepted for established historical facts supported by reliable citations; prefer original references for disputed claims. Ensure the party has the rights and permissions required to publish and redistribute the submission, and that it discusses political issues rather than personal allegations or attacks. You remain responsible for anything submitted under your account.
+- Check that the wording represents your party's approved position, is accurate and meets the length and plain-text restrictions. Check the supporting evidence yourself against the [accepted source criteria](CONTENT_POLICY.md#accepted-sources-of-factual-evidence). Ask ChatGPT to locate and verify qualifying references rather than relying on its answers. Wikipedia is accepted for established historical facts supported by reliable citations; prefer original references for disputed claims. Ensure the party has the rights and permissions required to publish and redistribute the submission, and that it discusses political issues rather than personal allegations, personal attacks or responses to direct quotes from opposing parties. You remain responsible for anything submitted under your account.
 - Approve the proposed changes. A write-capable connection can create a branch in your fork, commit the changes, and open the public PR to the official repository. If it cannot open the PR directly, use GitHub's **Compare & pull request** or **New pull request** screen, selecting your fork's branch as the source and the official repository's `main` as the destination.
 - Open the PR link and check **Files changed** and the description. If the reviewer asks for a correction, ask ChatGPT to update the same PR branch; the existing PR will reflect the new commits. Answer evidence questions in the public PR discussion.
 - The repository owner reviews the proposal under the same rules for all parties. Nothing is published simply because a PR has been opened. If approved and merged, the extension will pick up the published changes through its normal update process. Review and publication times are not guaranteed.
