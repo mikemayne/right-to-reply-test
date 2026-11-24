@@ -2,6 +2,8 @@
 
 These rules apply equally to every participating political party. **Right to Reply is an independent, politically neutral project.** It does not endorse, oppose or favour any party, candidate, ideology or political position. It provides a right of reply, not an endorsement or an independent certification of the party's views.
 
+The owner reserves the right to hold and express personal political opinions, but guarantees that these will be kept separate from the plugin, its operation and all editorial decisions.
+
 ## 1. Who may participate
 
 - Participation is limited to **officially registered UK political parties**, as listed on the relevant Electoral Commission register. Think tanks, pressure groups, campaign movements, private individuals and other organisations are not eligible to submit official replies.
