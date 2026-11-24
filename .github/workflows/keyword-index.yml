@@ -18,6 +18,7 @@ jobs:
         with:
           persist-credentials: false
       - run: python tools/generate-keywords.py responses
+      - run: python tools/generate-keywords.py responses --bundle
       - name: Test additions, withdrawals and large indexes
         run: python tools/test-keywords.py
       - name: Test demo pages and response fixtures
@@ -43,13 +44,15 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           ref: main
-      - name: Publish filenames only
+      - name: Publish filenames and complete approved response bundle
         shell: bash
         run: |
           set -euo pipefail
           python tools/generate-keywords.py responses > "$RUNNER_TEMP/keywords.json"
+          python tools/generate-keywords.py responses --bundle > "$RUNNER_TEMP/responses.json"
           blob=$(git hash-object -w "$RUNNER_TEMP/keywords.json")
-          tree=$(printf '100644 blob %s\tkeywords.json\n' "$blob" | git mktree)
+          bundle=$(git hash-object -w "$RUNNER_TEMP/responses.json")
+          tree=$(printf '100644 blob %s\tkeywords.json\n100644 blob %s\tresponses.json\n' "$blob" "$bundle" | git mktree)
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           if git ls-remote --exit-code --heads origin refs/heads/keyword-index >/dev/null; then
