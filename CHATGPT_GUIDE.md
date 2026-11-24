@@ -22,7 +22,7 @@ For example, copy this prompt and replace the placeholders:
 
 > Read the latest README, CONTRIBUTING.md and CONTENT_POLICY.md in [official party repository]. I am contributing from [my GitHub fork]. Prepare a new public pull request to the official repository's main branch, using a fresh branch based on its current main.
 >
-> Keyword: [exact policy-related keyword or phrase; not a person's name or a direct quote from an opposing party]
+> Keyword: [policy-related keyword or phrase, including broad terms such as tax, immigration or fossil fuels; not a person's name or a direct quote from an opposing party]
 >
 > One-line response: [approved wording, no more than 128 characters]
 >
