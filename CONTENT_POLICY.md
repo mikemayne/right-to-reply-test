@@ -76,6 +76,7 @@ Application is **context-sensitive**: legitimate policy comparison, clearly labe
 - Misleading submissions, repeated rule violations, abusive behaviour or attempts to manipulate review may delay review or lead to rejection.
 - **No difference in treatment or review priority may be based on political affiliation, ideology, viewpoint or whether the owner agrees with the contributor.** The same standards and opportunities apply to everyone; equal opportunity does not guarantee equal turnaround or acceptance.
 - Rejections must identify the specific published rule(s) at issue. Contributors may challenge decisions in the public PR discussion. The owner retains final editorial control.
+- Suggestions that make the platform fairer for everyone are welcome. Suggestions and decisions on them must be discussed publicly on GitHub. Changes that favour one political party over others will not be adopted.
 
 ## 6. Abusive conduct and GitHub account enforcement
 
