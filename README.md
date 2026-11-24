@@ -1,5 +1,7 @@
 # Right to Reply Test
 
+**Our guarantee:** Right to Reply is free to use, will always remain free to use, and will never include advertising.
+
 **New to GitHub?** [How to set up ChatGPT and submit updates without coding](CHATGPT_GUIDE.md).
 
 Test source configuration for **Right to Reply**, an independent, politically neutral right-of-reply project for officially registered UK political parties.
