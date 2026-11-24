@@ -4,7 +4,7 @@
 
 Test source configuration for **Right to Reply**, an independent, politically neutral right-of-reply project for officially registered UK political parties.
 
-This repository publishes fictional example responses for testing the browser extension. It does not represent a participating political party. All replies use a neutral underline and short statement; party identity is revealed only when a reader expands a statement. The extension reads `party.json`, `identifiers.json` and individual Markdown response files from `main`, and the automatically generated `keywords.json` from `keyword-index`. Proposed party contributions must be made through a public pull request and reviewed under exactly the same rules for every party.
+This repository publishes fictional example responses for testing the browser extension. It does not represent a participating political party. All replies use a neutral underline and short statement; party identity is revealed only when a reader expands a statement. The extension reads `party.json`, `identifiers.json` from `main`, and the complete automatically generated `responses.json` bundle from `keyword-index` on a scheduled background refresh. No keyword-specific downloads occur when readers open replies. Proposed party contributions must be made through a public pull request and reviewed under exactly the same rules for every party.
 
 - [Editorial and participation rules](CONTENT_POLICY.md)
 - [How to contribute and supply public evidence](CONTRIBUTING.md)
