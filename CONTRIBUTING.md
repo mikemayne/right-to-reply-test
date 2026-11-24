@@ -9,11 +9,11 @@ Read [the editorial and participation rules](CONTENT_POLICY.md) before opening a
 Use these plain-text fields for each proposed entry:
 
 - **Party:** the registered party this response represents
-- **Trigger keyword or phrase:** the exact phrase or closely matched phrase to which that party wishes to respond; the reply must not appear unless the party itself is mentioned. People's names cannot be response keywords; broad policy terms are permitted where the reply is directly relevant. Generic connecting words and unrelated triggers are not permitted
+- **Trigger keyword or phrase:** the exact phrase or closely matched phrase to which that party wishes to respond; the reply must not appear unless the party itself is mentioned. People's names cannot be response keywords. Direct quotes from opposing parties (including close variants intended to target those quotes) cannot be used as triggers, and responses to such quotes are forbidden. Broad policy terms are permitted where the reply is directly relevant. Generic connecting words and unrelated triggers are not permitted
 - **One-line response:** `Your one line response to the keyword goes here`
 - **Extended description (up to 255 characters):** `An extended description of up to 255 characters goes here, no links.`
 
-The published response is **plain text only**. The one-line response must be one line and at most 128 characters. No external links, redirects, executable content, markup or unexpected fields may appear in the published response. The party's triggering text and replies must be attributed only to that party. Keep responses focused on policies, proposals, voting records, political positions and consequences. No personal attacks, allegations of personal misconduct or criminality, or defamatory allegations about identifiable individuals, whether named or not.
+The published response is **plain text only**. The one-line response must be one line and at most 128 characters. No external links, redirects, executable content, markup or unexpected fields may appear in the published response. The party's triggering text and replies must be attributed only to that party. Keep responses focused on policies, proposals, voting records, political positions and consequences. No personal allegations or personal attacks, including allegations of misconduct, criminality or other defamatory allegations about identifiable individuals, whether named or not.
 
 By submitting material you confirm your party has the necessary rights to publish and license it, and permits Right to Reply to reproduce, display and redistribute approved content without payment. Do not include copyrighted material you have no lawful right to use.
 
