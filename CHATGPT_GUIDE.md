@@ -6,7 +6,7 @@ ChatGPT is optional. You can also edit the files directly on GitHub. The same [c
 
 ## One-time setup
 
-1. Create an account at [GitHub](https://github.com/signup) if you do not already have one. This must be the single account nominated and authorised by your party. Enable two-factor authentication.
+1. Create an account at [GitHub](https://github.com/signup) if you do not already have one. This must be the single account nominated and authorised by your party at the time. Enable two-factor authentication and do not share credentials. If the authorised representative changes, ask the project owner to verify and approve the replacement account before submitting.
 2. Once the project has provided your party's official repository address, open it on GitHub and select **Fork**. Create the fork under your nominated account. A fork is your own editable copy; it does not give you permission to change the official repository. The test repository contains fictional content only.
 3. Sign in at [ChatGPT](https://chatgpt.com/). Open **Settings → Plugins** (called Apps on some interfaces), find GitHub, and install/connect it. Follow the GitHub authorisation screens using the nominated account. Grant access to your fork and only other repositories needed for this work, where available.
 4. Return to ChatGPT and ask it to read the README, contribution instructions and editorial rules in your fork. If it cannot find the repository, check the selected repositories and allow a few minutes for the connection to become available.
@@ -22,7 +22,7 @@ For example, copy this prompt and replace the placeholders:
 
 > Read the latest README, CONTRIBUTING.md and CONTENT_POLICY.md in [official party repository]. I am contributing from [my GitHub fork]. Prepare a new public pull request to the official repository's main branch, using a fresh branch based on its current main.
 >
-> Keyword: [exact keyword or phrase]
+> Keyword: [exact keyword or phrase; not a person's name]
 >
 > One-line response: [approved wording, no more than 128 characters]
 >
@@ -36,7 +36,7 @@ For an existing response, just ask to change the relevant text. To withdraw one,
 
 ### Review and submit
 
-- Check that the wording represents your party's approved position, is accurate and meets the length and plain-text restrictions. Check the supporting evidence yourself against the [accepted source criteria](CONTENT_POLICY.md#accepted-sources-of-factual-evidence). Ask ChatGPT to locate and verify qualifying references rather than relying on its answers. Wikipedia is accepted for established historical facts supported by reliable citations; prefer original references for disputed claims. You remain responsible for anything submitted under your account.
+- Check that the wording represents your party's approved position, is accurate and meets the length and plain-text restrictions. Check the supporting evidence yourself against the [accepted source criteria](CONTENT_POLICY.md#accepted-sources-of-factual-evidence). Ask ChatGPT to locate and verify qualifying references rather than relying on its answers. Wikipedia is accepted for established historical facts supported by reliable citations; prefer original references for disputed claims. Ensure the party has the rights and permissions required to publish and redistribute the submission, and that it discusses political issues rather than personal allegations or attacks. You remain responsible for anything submitted under your account.
 - Approve the proposed changes. A write-capable connection can create a branch in your fork, commit the changes, and open the public PR to the official repository. If it cannot open the PR directly, use GitHub's **Compare & pull request** or **New pull request** screen, selecting your fork's branch as the source and the official repository's `main` as the destination.
 - Open the PR link and check **Files changed** and the description. If the reviewer asks for a correction, ask ChatGPT to update the same PR branch; the existing PR will reflect the new commits. Answer evidence questions in the public PR discussion.
 - The repository owner reviews the proposal under the same rules for all parties. Nothing is published simply because a PR has been opened. If approved and merged, the extension will pick up the published changes through its normal update process. Review and publication times are not guaranteed.

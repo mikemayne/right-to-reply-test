@@ -4,7 +4,7 @@
 
 Test source configuration for **Right to Reply**, an independent, politically neutral right-of-reply project for officially registered UK political parties.
 
-This repository publishes fictional example responses for testing the browser extension. It does not represent a participating political party. The fictional test party uses a black underline (`#000000`). The extension reads `party.json`, `identifiers.json` and individual Markdown response files from `main`, and the automatically generated `keywords.json` from `keyword-index`. Proposed party contributions must be made through a public pull request and reviewed under exactly the same rules for every party.
+This repository publishes fictional example responses for testing the browser extension. It does not represent a participating political party. All replies use a neutral underline and short statement; party identity is revealed only when a reader expands a statement. The extension reads `party.json`, `identifiers.json` and individual Markdown response files from `main`, and the automatically generated `keywords.json` from `keyword-index`. Proposed party contributions must be made through a public pull request and reviewed under exactly the same rules for every party.
 
 - [Editorial and participation rules](CONTENT_POLICY.md)
 - [How to contribute and supply public evidence](CONTRIBUTING.md)
@@ -13,8 +13,7 @@ Published responses are plain text only: a one-line response of up to 128 charac
 
 ## Demonstration website
 
-- [Interactive preview](https://mikemayne.github.io/right-to-reply-test/) — no extension required.
-- [Extension test page](https://mikemayne.github.io/right-to-reply-test/test.html) — the same article with no simulated markup.
-- [Five-party preview](https://mikemayne.github.io/right-to-reply-test/five-parties.html) — standalone fictional interface mock-up with five, two and one matching replies. Its data is not part of the real party feed.
+- [Interactive preview](https://mikemayne.github.io/right-to-reply-test/) — fictional interface mock-up with five, two and one matching replies; no extension required. Its data is not part of the real party feed.
+- [Extension test page](https://mikemayne.github.io/right-to-reply-test/test.html) — a separate article with no simulated markup, using the repository’s example party and response files.
 
-Publish GitHub Pages from `main` at the repository root. To test locally, run `python -m http.server 8000` from the repository root and open `http://localhost:8000/`. The preview reads the same individual Markdown files as the extension. The decorative navigation and separate article are negative controls.
+Publish GitHub Pages from `main` at the repository root. To test locally, run `python -m http.server 8000` from the repository root and open `http://localhost:8000/`. The interactive preview uses local fictional fixtures, while the extension test page uses the actual example-party feed. The decorative navigation and separate article on the extension test page are negative controls.

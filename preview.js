@@ -16,11 +16,32 @@
   }
   function place() {
     if (!anchor || popup.hidden) return;
-    const r = anchor.getBoundingClientRect(), width = popup.offsetWidth, height = popup.offsetHeight;
-    popup.style.left = Math.max(8, Math.min(r.left, innerWidth - width - 8)) + 'px';
+    const r = anchor.getBoundingClientRect();
     const below = r.bottom + 6;
-    popup.style.top = Math.max(8, Math.min(below + height > innerHeight && r.top > height + 6 ?
-      r.top - height - 6 : below, innerHeight - height - 8)) + 'px';
+    const roomBelow = Math.max(0, innerHeight - 8 - below);
+    const roomAbove = Math.max(0, r.top - 14);
+    const limit = Math.min(innerHeight * .72, 520);
+    // Never place the overlay over its trigger: a hover must not intercept
+    // the click that pins the popup. Scroll replies inside the available space.
+    const above = Math.min(popup.scrollHeight + 4, limit) > roomBelow && roomAbove > roomBelow;
+    const room = above ? roomAbove : roomBelow;
+    popup.style.maxHeight = Math.min(limit, room) + 'px';
+    const width = popup.offsetWidth, height = popup.offsetHeight;
+    popup.style.left = Math.max(8, Math.min(r.left, innerWidth - width - 8)) + 'px';
+    popup.style.top = Math.max(8, Math.min(above ? r.top - height - 6 : below, innerHeight - height - 8)) + 'px';
+  }
+  function revealDetail(detail) {
+    // Scroll only the panel, accounting for its sticky header.
+    const panel = popup.getBoundingClientRect();
+    const header = popup.querySelector('.reply-toolbar').getBoundingClientRect();
+    const top = Math.max(panel.top + popup.clientTop, header.bottom) + 8;
+    const bottom = panel.top + popup.clientTop + popup.clientHeight - 8;
+    const rect = detail.getBoundingClientRect();
+    if (rect.height > bottom - top || rect.top < top) {
+      popup.scrollTop += rect.top - top;
+    } else if (rect.bottom > bottom) {
+      popup.scrollTop += rect.bottom - bottom;
+    }
   }
   function close(restore = false) {
     clearTimeout(timer);
@@ -83,6 +104,7 @@
       detail.hidden = !detail.hidden;
       short.setAttribute('aria-expanded', String(!detail.hidden));
       place();
+      if (!detail.hidden) revealDetail(detail);
     });
     item.append(short,detail);
     return item;
@@ -102,6 +124,7 @@
     const current = ++sequence;
     body.textContent = 'Loading responses…';
     popup.hidden = false;
+    popup.scrollTop = 0;
     place();
     if (pin) closeButton.focus({preventScroll:true});
     try {
@@ -116,15 +139,6 @@
     place();
   }
   for (const button of document.querySelectorAll('.preview-keyword')) {
-    if (fake) {
-      const colors = shuffled((fake[button.dataset.keyword] ?? []).map(p => p.color));
-      if (colors.length === 1) button.style.setProperty('--keyword-color',colors[0]);
-      else if (colors.length > 1) {
-        button.classList.add('multi-keyword');
-        button.style.setProperty('--keyword-segments','linear-gradient(to right,' +
-          colors.map((c,i) => c + ' ' + (100*i/colors.length) + '% ' + (100*(i+1)/colors.length) + '%').join(',') + ')');
-      }
-    }
     button.addEventListener('pointerenter', e => { if(e.pointerType === 'mouse') open(button,false); });
     button.addEventListener('pointerleave', delay);
     button.addEventListener('click', () => open(button,true));

@@ -1,4 +1,4 @@
-"""Verify the two demo pages share article text and preview keywords have response files."""
+"""Verify the interactive preview and separate extension test page."""
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -34,24 +34,20 @@ def parse(name):
     return page
 
 preview, test = parse("index.html"), parse("test.html")
-assert preview.articles == test.articles
-assert len(preview.articles) == 2
-assert "Example Party" in preview.articles[0]
-assert "Example Party" not in preview.articles[1]
-assert len(set(preview.keywords)) >= 4
+assert len(test.articles) == 2
+assert "Example Party" in test.articles[0]
+assert "Example Party" not in test.articles[1]
 assert not test.keywords and not test.scripts
-for keyword in set(preview.keywords):
+for keyword in ("example keyword", "magna aliqua", "ullamco laboris", "voluptate velit"):
+    assert keyword in test.articles[0]
     lines = (root / "responses" / (keyword + ".md")).read_text().splitlines()
     assert len(lines) == 3 and lines[1] == ""
     assert 0 < len(lines[0]) <= 128 and 0 < len(lines[2]) <= 255
-print("Demo article parity, plain test page and response fixtures passed.")
-
-
-five = parse("five-parties.html")
-assert len(five.articles) == 1
-assert len(five.keywords) == 3
-assert "five-parties.js" in five.scripts and "preview.js" in five.scripts
-assert "five-parties.js" not in preview.scripts and "five-parties.js" not in test.scripts
+assert len(preview.articles) == 1
+assert set(preview.keywords) == {"magna aliqua", "ullamco laboris", "voluptate velit"}
+assert "five-parties.js" in preview.scripts and "preview.js" in preview.scripts
 assert "reply-logo" in (root / "index.html").read_text()
-assert "reply-logo" in (root / "five-parties.html").read_text()
-print("Standalone five-party preview checks passed.")
+assert not (root / "five-parties.html").exists()
+for name in ("index.html", "test.html"):
+    assert 'href="five-parties.html"' not in (root / name).read_text()
+print("Interactive preview, plain extension test page and response fixtures passed.")

@@ -2,18 +2,20 @@
 
 Read [the editorial and participation rules](CONTENT_POLICY.md) before opening a pull request.
 
-**Who can submit:** one verified, authorised GitHub account per officially registered UK political party. No submissions on behalf of another party or organisation. All party-content changes must be proposed in a public PR.
+**Who can submit:** one verified, authorised GitHub account at a time per officially registered UK political party. A legitimate change of representative requires the owner's approval and revocation of the previous authorisation. Do not share credentials. No submissions on behalf of another party or organisation. All party-content changes must be proposed in a public PR.
 
 ## Submission template
 
 Use these plain-text fields for each proposed entry:
 
 - **Party:** the registered party this response represents
-- **Trigger keyword or phrase:** the exact phrase or closely matched phrase to which that party wishes to respond; the reply must not appear unless the party itself is mentioned
+- **Trigger keyword or phrase:** the exact phrase or closely matched phrase to which that party wishes to respond; the reply must not appear unless the party itself is mentioned. People's names cannot be response keywords; broad policy terms are permitted where the reply is directly relevant. Generic connecting words and unrelated triggers are not permitted
 - **One-line response:** `Your one line response to the keyword goes here`
 - **Extended description (up to 255 characters):** `An extended description of up to 255 characters goes here, no links.`
 
-The published response is **plain text only**. The one-line response must be one line and at most 128 characters. No external links, redirects, executable content, markup or unexpected fields may appear in the published response. The party's triggering text and replies must be attributed only to that party.
+The published response is **plain text only**. The one-line response must be one line and at most 128 characters. No external links, redirects, executable content, markup or unexpected fields may appear in the published response. The party's triggering text and replies must be attributed only to that party. Keep responses focused on policies, proposals, voting records, political positions and consequences. No personal attacks, allegations of personal misconduct or criminality, or defamatory allegations about identifiable individuals, whether named or not.
+
+By submitting material you confirm your party has the necessary rights to publish and license it, and permits Right to Reply to reproduce, display and redistribute approved content without payment. Do not include copyrighted material you have no lawful right to use.
 
 ## Evidence and public discussion
 
@@ -29,6 +31,6 @@ Links to reputable evidence **are allowed and encouraged in the public PR**. The
 
 Only approved changes may be released. This repository publishes a fictional example response for integration testing, not a real political reply. For each approved response, use a Markdown file in `responses/` named after its keyword, containing two one-line plain-text paragraphs separated by one blank line. The first paragraph is limited to 128 characters and the second to 255. Add, edit or delete the individual Markdown file. Its filename (without `.md`) is the keyword. The keyword index is automatically generated after merging to `main`; never edit it or submit it in a PR. Only the owner may change the publishing workflow. List the party name and complete approved aliases in `identifiers.json`.
 
-**All abusive conduct is prohibited.** Abusive conduct in a PR or its discussion, including harassment, intimidation and abusive language, will be flagged and may be reported to GitHub. If the party's sole nominated account is suspended or banned by GitHub, **the party must resolve that directly with GitHub**. Right to Reply cannot reverse GitHub's decision or accept a replacement account to circumvent the restriction. Legitimate criticism and political disagreement are not themselves abuse.
+**All abusive conduct is prohibited.** Abusive conduct in a PR or its discussion, including harassment, intimidation and abusive language, will be flagged and may be reported to GitHub. If the party's sole nominated account is suspended or banned by GitHub, **the party must resolve that directly with GitHub**. Right to Reply cannot reverse GitHub's decision or facilitate evasion of its restrictions. The owner may refuse a replacement account following a suspension or ban; legitimate personnel changes are otherwise permitted subject to verification. Legitimate criticism and political disagreement are not themselves abuse.
 
-Review times are **not guaranteed**. Conduct, accuracy and cooperation affect prioritisation, but political positions do not. See [the full policy](CONTENT_POLICY.md) for rejection, challenge, correction and immediate-removal rules.
+Review times are **not guaranteed**. Conduct, accuracy and cooperation affect prioritisation, but political positions do not. Well-considered, properly evidenced submissions may be prioritised over bulk submissions. The owner may reject or withdraw material presenting potential legal liability. See [the full policy](CONTENT_POLICY.md) for rejection, challenge, correction and immediate-removal rules.
