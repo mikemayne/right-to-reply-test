@@ -15,6 +15,8 @@ Published responses are plain text only: a one-line response of up to 128 charac
 
 ## Demonstration website
 
+- [Frequently asked questions](https://mikemayne.github.io/right-to-reply-test/faq.html) — participation, content verification, public review and reader privacy.
+
 - [Interactive preview](https://mikemayne.github.io/right-to-reply-test/) — fictional interface mock-up with five, two and one matching replies; no extension required. Its data is not part of the real party feed.
 - [Extension test page](https://mikemayne.github.io/right-to-reply-test/test.html) — a separate article with no simulated markup, using the repository’s example party and response files.
 

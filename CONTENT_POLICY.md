@@ -8,8 +8,9 @@ These rules apply equally to every participating political party. **Right to Rep
 - Every eligible party is offered the **same opportunity, terms, editorial rules and technical capabilities**. The initial invitation is to be extended to all eligible parties on the same basis; parties may join later.
 - Each party must identify **one authorised GitHub account at a time** to submit its content. The account must be used and secured in accordance with GitHub's terms; credentials must not be shared. A party may request a replacement representative for legitimate personnel changes. The owner must verify the new authorisation and withdraw the previous account's authorisation before accepting submissions from the replacement. No unofficial supporter or third-party organisation may submit material on the party's behalf.
 - A party may submit responses only in its own name. It cannot create responses that impersonate, purport to represent or are branded as another party.
-- A reply is displayed only when **that party is mentioned and its approved keyword or phrase matches**. Parties choose the keywords or phrases associated with their own positions, subject to the same published technical and editorial safeguards. Broad policy topics are permitted when the statement directly addresses the topic. Generic connecting words such as `and`, and triggers with no clear connection to the statement, are not permitted.
+- A reply is displayed only when **that party is mentioned and its approved keyword or phrase matches**. Parties choose the keywords or phrases associated with their own positions, subject to the same published technical and editorial safeguards. **Broad policy keywords such as `tax`, `immigration` and `fossil fuels` are explicitly permitted** when the statement directly addresses the topic. Generic connecting words such as `and`, and triggers with no clear connection to the statement, are not permitted.
 - **People's names must not be used as response keywords.** Names may still be listed as approved party identifiers for recognising a reference to that party; this does not make them response triggers.
+- **Responses to direct quotes from opposing parties are forbidden.** Do not use such quotations, or close variants intended to target those quotations, as response triggers. Parties may respond to the underlying policy topic or political position independently of a specific quotation.
 
 ## 2. Published content and format
 
@@ -63,7 +64,7 @@ Application is **context-sensitive**: legitimate policy comparison, clearly labe
 
 - Address the keyword's actual subject; do not divert criticism into an unrelated attack on another party.
 - Right to Reply is a platform for political arguments, not personal accusations. Responses may address policies, proposals, voting records, political positions and their consequences, including fair criticism and comparison of party policies.
-- **No allegations of personal misconduct or criminality, personal attacks, or other defamatory allegations about identifiable individuals**, whether named or identifiable from context. This restriction applies to the short statement, extended description, keyword, and public submission or review discussion. Do not use indirect descriptions to evade it. The project may reject such material even if a contributor considers it true or in the public interest.
+- **No personal allegations or personal attacks, including allegations of misconduct, criminality or other defamatory allegations about identifiable individuals**, whether named or identifiable from context. This restriction applies to the short statement, extended description, keyword, and public submission or review discussion. Do not use indirect descriptions to evade it. The project may reject such material even if a contributor considers it true or in the public interest.
 - No personal abuse, dehumanisation, discriminatory scapegoating or unsupported accusations.
 - No false impressions of consensus, certainty, endorsement or authority.
 
@@ -75,6 +76,7 @@ Application is **context-sensitive**: legitimate policy comparison, clearly labe
 - Misleading submissions, repeated rule violations, abusive behaviour or attempts to manipulate review may delay review or lead to rejection.
 - **No difference in treatment or review priority may be based on political affiliation, ideology, viewpoint or whether the owner agrees with the contributor.** The same standards and opportunities apply to everyone; equal opportunity does not guarantee equal turnaround or acceptance.
 - Rejections must identify the specific published rule(s) at issue. Contributors may challenge decisions in the public PR discussion. The owner retains final editorial control.
+- Suggestions that make the platform fairer for everyone are welcome. Suggestions and decisions on them must be discussed publicly on GitHub. Changes that favour one political party over others will not be adopted.
 
 ## 6. Abusive conduct and GitHub account enforcement
 
